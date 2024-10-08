@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ordersapp
+  web:
+    resources:
+      static-locations: classpath:/browser/
