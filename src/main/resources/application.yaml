@@ -1,6 +1,25 @@
 spring:
+  profiles:
+    active: dev
   application:
     name: ordersapp
   web:
     resources:
       static-locations: classpath:/browser/
+  liquibase:
+    contexts: ${spring.profiles.active}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    #    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+  #        generate_statistics: true
+
+logging:
+  level:
+    org:
+      springframework: INFO
+      hibernate.SQL: DEBUG

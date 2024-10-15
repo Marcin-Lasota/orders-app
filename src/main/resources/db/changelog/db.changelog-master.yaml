@@ -1,18 +1,8 @@
 databaseChangeLog:
-    - changeSet:
-          id:  1
-          author:  Marcin
-          comment: init
-          changes:
-              - createTable:
-                    tableName:  orders
-                    columns:
-                      - column:
-                          name: id
-                          type: BIGINT
-                          autoIncrement: true
-                          constraints:
-                            primaryKey: true
-                            nullable: false
+  - include:
+      file: classpath:/db/changelog/changes/001-initial-schema.sql
+  - include:
+      context: dev
+      file: classpath:/db/changelog/changes/002-init-mock-data.sql
 
 
